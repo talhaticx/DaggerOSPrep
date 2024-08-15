@@ -16,7 +16,23 @@ void write_to_file(Contact *c) {
 
     fprintf(filePtr, "%s,%s,%s\n", c->name, c->number, c->email);
     // contact_count++;
-    fclose(filePtr);    
+    fclose(filePtr);
+}
+
+void write_all_contacts_to_file(int contact_count, Contact *contacts) {
+    FILE *filePtr = fopen(FILE_NAME, "w");
+
+    if (filePtr == NULL) {
+        printf("Error opening file for writing.\n");
+        return;
+    }
+
+    for (int i = 0; i < contact_count; i++) {
+        fprintf(filePtr, "%s,%s,%s\n",contacts[i].name, contacts[i].number, contacts[i].email);
+    }
+
+    fclose(filePtr);
+    
 }
 
 Contact *read_from_file(int *contact_count, Contact *contacts) {
