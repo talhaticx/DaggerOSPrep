@@ -11,8 +11,10 @@ OBJ = $(BUILD_DIR)/$(TARGET).o
 EXEC = $(TARGET)
 
 # Assembly and linking commands
-ASM = nasm -f elf32
-LD = ld -m elf_i386
+ASM = nasm -f elf64
+LD = ld -m elf_x86_64
+# ASM = nasm -f elf32
+# LD = ld -m elf_i386
 
 # Default rule to clean, build, and run the program
 all: clean $(EXEC)
@@ -27,7 +29,7 @@ $(OBJ): $(BUILD_DIR) $(SRC)
 
 # Rule to link the object file
 $(EXEC): $(OBJ)
-	$(LD) -o $(EXEC) $(OBJ)
+	$(LD) $(OBJ) -o $(EXEC)
 
 # Rule to run the program
 run: $(EXEC)
