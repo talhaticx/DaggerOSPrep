@@ -1,7 +1,7 @@
 # Makefile for assembling and linking an x86 Assembly program
 
 # Directories
-SRC_DIR = src
+SRC_DIR = projects
 BUILD_DIR = build
 
 # Source and target names
