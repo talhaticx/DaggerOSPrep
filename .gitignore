@@ -5,3 +5,4 @@ run
 .gdb_history
 tracker.md
 *.pdf
+*.lst
