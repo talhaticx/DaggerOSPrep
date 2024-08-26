@@ -1,7 +1,7 @@
 # Makefile for assembling and linking an x86 Assembly program
 
 # Directories
-SRC_DIR = projects
+SRC_DIR = src
 BUILD_DIR = build
 
 # Source and target names
@@ -9,6 +9,8 @@ TARGET = main
 SRC = $(SRC_DIR)/$(TARGET).asm
 OBJ = $(BUILD_DIR)/$(TARGET).o
 EXEC = $(TARGET)
+
+# yasm -f elf64 -g dwarf2 -1 main.lst  main.asm  
 
 # Assembly and linking commands
 ASM = nasm -f elf64
